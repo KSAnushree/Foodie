@@ -30,4 +30,25 @@ fun fetchFoods(){
        }
     }
 }
+    fun addFood(food: FoodItem) {
+        viewModelScope.launch {
+            RetrofitClient.apiService.createFood(food)
+            fetchFoods()
+        }
+    }
+
+    fun updateFood(food: FoodItem) {
+        viewModelScope.launch {
+            RetrofitClient.apiService.updateFood(food.id, food)
+            fetchFoods()
+        }
+    }
+
+    fun deleteFood(id: Int) {
+        viewModelScope.launch {
+            RetrofitClient.apiService.deleteFood(id)
+            fetchFoods()
+        }
+    }
 }
+
