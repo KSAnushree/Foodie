@@ -47,7 +47,25 @@ fun Foodie(viewModel: FoodViewModel=viewModel()) {
        Column(modifier = Modifier.padding(25.dp)) {
         Text("Foodie")
 
-            LazyColumn {
+           // Add Button
+           Button(
+               onClick = {
+                   viewModel.addFood(
+                       FoodItem(
+                           id = 0,
+                           name = "New Dish",
+                           price = 10.0,
+                           description = "Yummy!"
+                       )
+                   )
+               },
+               modifier = Modifier.padding(vertical = 16.dp)
+           ) {
+               Text("Add Food")
+           }
+
+           //food list
+           LazyColumn {
                 items(foodList) { food ->
                     Card(
                         modifier = Modifier

@@ -1,6 +1,6 @@
 package com.example.foodie
 
-import okhttp3.Response
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -28,7 +28,7 @@ interface FoodApiService{
     //to update an existing food item in your app’s server/database
 
     @DELETE("/foods/{id}")
-    suspend fun deleteFood(@Path("id") id: Int): Response
+    suspend fun deleteFood(@Path("id") id: Int): Response<Unit>
     //to  delete the food item with specific id
 
 

@@ -32,6 +32,7 @@ fun fetchFoods(){
 }
     fun addFood(food: FoodItem) {
         viewModelScope.launch {
+            Log.d("FoodViewModel", "Adding food: ${food.name}")
             RetrofitClient.apiService.createFood(food)
             fetchFoods()
         }
