@@ -49,6 +49,7 @@ dependencies {
 
     // Compose BOM
     implementation(platform("androidx.compose:compose-bom:2024.01.00"))
+    implementation(libs.androidx.material3.android)
     androidTestImplementation(platform("androidx.compose:compose-bom:2024.01.00"))
 
     // Compose UI
@@ -74,7 +75,9 @@ dependencies {
     // RecyclerView (optional if using Compose only)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
-    implementation("androidx.compose.material3:material3:1.1.2")
+   
+    implementation("androidx.compose.material3:material3:1.2.0")
+
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 
